@@ -45,6 +45,7 @@
                     <a href="#home" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Home</a>
                     <a href="#publications" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Publications</a>
                     <a href="#projects" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Projects</a>
+                    <a href="#notes" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Notes</a>
                     <a href="#blog" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Blog</a>
                     <a href="#community" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Community</a>
                     <a href="/path-to-your-cv.pdf" class="bg-indigo-600 text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-indigo-700 transition-all duration-300 shadow">Download CV</a>
@@ -89,6 +90,7 @@
         <!-- Dynamic Content Sections -->
         <div id="publications-container"></div>
         <div id="projects-container"></div>
+        <div id="notes-container"></div>
         <div id="blog-container"></div>
         <div id="community-container"></div>
 
@@ -112,7 +114,7 @@
     <script>
         // --- Content Loader Script ---
         document.addEventListener('DOMContentLoaded', () => {
-            const sections = ['publications', 'projects', 'blog', 'community'];
+            const sections = ['publications', 'projects', 'notes', 'blog', 'community'];
             sections.forEach(section => {
                 fetch(`sections/${section}.html`)
                     .then(response => {
