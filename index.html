@@ -1,149 +1,147 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Your Name | Personal Portfolio</title>
+    <title>Your Name | Academic Portfolio</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400..700;1,400..700&family=Noto+Sans:wght@400;500;700&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Noto Sans', sans-serif;
+        }
+        h1, h2, h3, .font-lora {
+            font-family: 'Lora', serif;
         }
         .section {
-            scroll-margin-top: 64px;
+            scroll-margin-top: 72px; /* Adjust based on header height */
+        }
+        /* Styling for publication list */
+        .publication-list li {
+            position: relative;
+            padding-left: 2rem; 
+            margin-bottom: 1.5rem;
+        }
+        .publication-list li::before {
+            content: "◆";
+            position: absolute;
+            left: 0;
+            top: 0.1em;
+            color: #4f46e5; /* indigo-600 */
+            font-size: 1.25rem;
         }
     </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
+<body class="bg-slate-50 text-slate-700">
 
     <!-- Header -->
-    <header class="bg-white shadow-md fixed top-0 left-0 right-0 z-10">
-        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
-            <div class="text-2xl font-bold text-gray-900">Your Name</div>
-            <div class="hidden md:flex space-x-6">
-                <a href="#about" class="text-gray-600 hover:text-indigo-600 transition duration-300">About</a>
-                <a href="#projects" class="text-gray-600 hover:text-indigo-600 transition duration-300">Projects</a>
-                <a href="#contact" class="text-gray-600 hover:text-indigo-600 transition duration-300">Contact</a>
+    <header class="bg-white/95 backdrop-blur-sm shadow-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6">
+            <div class="flex justify-between items-center h-16 md:h-20">
+                <a href="#home" class="text-2xl font-bold text-slate-800 font-lora">Dr. [Your Name]</a>
+                <div class="hidden md:flex items-center space-x-6">
+                    <a href="#home" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Home</a>
+                    <a href="#publications" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Publications</a>
+                    <a href="#projects" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Projects</a>
+                    <a href="#blog" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Blog</a>
+                    <a href="#community" class="text-slate-600 hover:text-indigo-600 transition-colors duration-300">Community</a>
+                    <a href="/path-to-your-cv.pdf" class="bg-indigo-600 text-white px-4 py-2 rounded-md font-semibold text-sm hover:bg-indigo-700 transition-all duration-300 shadow">Download CV</a>
+                </div>
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden">
+                    <button id="mobile-menu-button" class="text-slate-700">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+                    </button>
+                </div>
             </div>
-            <div class="md:hidden">
-                <button id="mobile-menu-button" class="text-gray-800 focus:outline-none">
-                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
-                </button>
-            </div>
-        </nav>
+        </div>
         <!-- Mobile Menu -->
-        <div id="mobile-menu" class="md:hidden hidden px-6 pb-4">
-            <a href="#about" class="block py-2 text-gray-600 hover:text-indigo-600">About</a>
-            <a href="#projects" class="block py-2 text-gray-600 hover:text-indigo-600">Projects</a>
-            <a href="#contact" class="block py-2 text-gray-600 hover:text-indigo-600">Contact</a>
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-slate-200">
+            <a href="#home" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Home</a>
+            <a href="#publications" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Publications</a>
+            <a href="#projects" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Projects</a>
+            <a href="#blog" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Blog</a>
+            <a href="#community" class="block px-6 py-3 text-slate-600 hover:bg-slate-50 hover:text-indigo-600">Community</a>
+            <a href="/path-to-your-cv.pdf" class="block px-6 py-3 text-indigo-600 font-semibold hover:bg-slate-50">Download CV</a>
         </div>
     </header>
 
-    <!-- Main Content -->
-    <main class="pt-24">
-
-        <!-- Hero Section -->
-        <section id="hero" class="container mx-auto px-6 py-16 text-center">
-            <img src="https://placehold.co/150x150/E2E8F0/333333?text=You" alt="Your profile picture" class="w-36 h-36 rounded-full mx-auto mb-6 shadow-lg">
-            <h1 class="text-4xl md:text-6xl font-bold text-gray-900 mb-4">Hi, I'm [Your Name]</h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-3xl mx-auto">
-                I'm a [Your Profession/Title] passionate about [Your Passion]. Welcome to my little corner of the internet.
-            </p>
-            <a href="#contact" class="mt-8 inline-block bg-indigo-600 text-white font-semibold px-8 py-3 rounded-lg shadow-md hover:bg-indigo-700 transition duration-300">Get In Touch</a>
-        </section>
-
-        <!-- About Section -->
-        <section id="about" class="section bg-white py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-10">About Me</h2>
-                <div class="max-w-3xl mx-auto text-gray-700 text-lg leading-relaxed">
-                    <p class="mb-6">
-                        Hello! I'm a lifelong learner with a deep interest in [Field 1], [Field 2], and [Field 3]. My journey started [briefly describe your origin story or how you got into your field].
-                    </p>
-                    <p class="mb-6">
-                        I specialize in [Your Specialization] and have experience working with various technologies and tools like [Tool 1], [Tool 2], and [Tool 3]. I enjoy solving complex problems and turning ideas into tangible realities.
-                    </p>
-                    <p>
-                        When I'm not coding or designing, you can find me [Your Hobby 1], [Your Hobby 2], or exploring the great outdoors.
-                    </p>
+    <main class="pt-20">
+        <!-- Home / About Section (Stays in index.html for fast loading) -->
+        <section id="home" class="section container mx-auto px-6 py-16 md:py-24">
+            <div class="grid md:grid-cols-3 gap-8 md:gap-12 items-center">
+                <div class="md:col-span-1">
+                    <img src="https://placehold.co/400x400/E0E7FF/3730A3?text=Your\nPhoto" alt="Headshot of [Your Name]" class="rounded-lg shadow-lg w-full max-w-xs mx-auto">
+                </div>
+                <div class="md:col-span-2">
+                    <h1 class="text-4xl md:text-5xl font-bold text-slate-800 mb-4">About Me</h1>
+                    <div class="text-lg leading-relaxed space-y-4">
+                        <p>I am a [Your Title, e.g., Postdoctoral Researcher, PhD Candidate] at the [Your University/Institution], specializing in [Your Field]. My research focuses on [Your primary research interest], with a particular emphasis on [a more specific interest] and [another specific interest].</p>
+                        <p>I hold a Ph.D. in [Your Degree] from [Your Alma Mater] and a B.S. in [Your Degree] from [Your Undergraduate Institution]. I am passionate about using [a method or technology] to tackle challenging problems in [your field] and am always eager to collaborate on innovative projects.</p>
+                        <p>Beyond research, I enjoy [Your Hobby 1] and exploring [Your Hobby 2]. This website serves as a central hub for my academic work, projects, and occasional thoughts.</p>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section py-20">
-            <div class="container mx-auto px-6">
-                <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">My Projects</h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    
-                    <!-- Project Card 1 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <img src="https://placehold.co/600x400/A3BFFA/FFFFFF?text=Project+1" alt="Project 1 Screenshot" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Project One Title</h3>
-                            <p class="text-gray-700 mb-4">A brief description of the project, what it does, and the technologies used.</p>
-                            <a href="#" class="text-indigo-600 font-semibold hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 2 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <img src="https://placehold.co/600x400/A3BFFA/FFFFFF?text=Project+2" alt="Project 2 Screenshot" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Project Two Title</h3>
-                            <p class="text-gray-700 mb-4">A brief description of the project, what it does, and the technologies used.</p>
-                            <a href="#" class="text-indigo-600 font-semibold hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-
-                    <!-- Project Card 3 -->
-                    <div class="bg-white rounded-lg shadow-lg overflow-hidden transform hover:-translate-y-2 transition duration-300">
-                        <img src="https://placehold.co/600x400/A3BFFA/FFFFFF?text=Project+3" alt="Project 3 Screenshot" class="w-full h-48 object-cover">
-                        <div class="p-6">
-                            <h3 class="text-xl font-bold mb-2">Project Three Title</h3>
-                            <p class="text-gray-700 mb-4">A brief description of the project, what it does, and the technologies used.</p>
-                            <a href="#" class="text-indigo-600 font-semibold hover:underline">View on GitHub &rarr;</a>
-                        </div>
-                    </div>
-
-                </div>
-            </div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="section bg-white py-20">
-            <div class="container mx-auto px-6 text-center">
-                 <h2 class="text-3xl font-bold text-center text-gray-900 mb-6">Let's Connect</h2>
-                 <p class="text-lg text-gray-600 mb-8">I'm always open to discussing new projects or creative ideas. Feel free to reach out!</p>
-                 <a href="mailto:your.email@example.com" class="text-xl text-indigo-600 font-semibold hover:underline">your.email@example.com</a>
-                 <div class="mt-8 flex justify-center space-x-6">
-                     <a href="#" class="text-gray-500 hover:text-gray-900">
-                         <svg class="w-8 h-8" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg>
-                     </a>
-                     <!-- Add other social media icons (LinkedIn, Twitter, etc.) here -->
-                 </div>
-            </div>
-        </section>
+        <!-- Dynamic Content Sections -->
+        <div id="publications-container"></div>
+        <div id="projects-container"></div>
+        <div id="blog-container"></div>
+        <div id="community-container"></div>
 
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-6">
+    <footer class="bg-slate-800 text-slate-300 py-12">
         <div class="container mx-auto px-6 text-center">
-            <p>&copy; 2024 [Your Name]. All Rights Reserved.</p>
+            <p class="font-lora text-lg mb-4">Dr. [Your Name]</p>
+            <div class="flex justify-center space-x-6 mb-6">
+                 <!-- Social Links -->
+                <a href="#" class="hover:text-white" title="GitHub"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.168 6.839 9.49.5.092.682-.217.682-.482 0-.237-.009-.868-.014-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.031-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.378.203 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.338 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.001 10.001 0 0022 12c0-5.523-4.477-10-10-10z" clip-rule="evenodd" /></svg></a>
+                <a href="#" class="hover:text-white" title="LinkedIn"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg></a>
+                <a href="#" class="hover:text-white" title="Google Scholar"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 24a7 7 0 1 1 0-14 7 7 0 0 1 0 14zm0-24L0 9.5l4.838 3.35L12 18l7.162-5.15L24 9.5z"/></svg></a>
+                <a href="#" class="hover:text-white" title="ORCID"><svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.372 0 0 5.372 0 12s5.372 12 12 12 12-5.372 12-12S18.628 0 12 0zM7.369 4.384h2.95v10.848h-2.95V4.384zm2.008 12.434c-1.115 0-2.018.903-2.018 2.018s.903 2.018 2.018 2.018 2.018-.903 2.018-2.018-.902-2.018-2.018-2.018zm4.553-6.456h2.95v6.456h-2.95V10.362z"/></svg></a>
+            </div>
+            <p class="text-sm text-slate-400">&copy; 2025 [Your Name]. All Rights Reserved.</p>
         </div>
     </footer>
 
     <script>
-        // Mobile menu toggle
+        // --- Content Loader Script ---
+        document.addEventListener('DOMContentLoaded', () => {
+            const sections = ['publications', 'projects', 'blog', 'community'];
+            sections.forEach(section => {
+                fetch(`sections/${section}.html`)
+                    .then(response => {
+                        if (!response.ok) throw new Error(`Network response was not ok for ${section}.html`);
+                        return response.text();
+                    })
+                    .then(html => {
+                        const container = document.getElementById(`${section}-container`);
+                        if (container) container.innerHTML = html;
+                    })
+                    .catch(error => {
+                        console.error(`Failed to load section ${section}:`, error);
+                        const container = document.getElementById(`${section}-container`);
+                        if (container) container.innerHTML = `<p class="text-center text-red-500 py-10">Error: Could not load ${section} content.</p>`;
+                    });
+            });
+        });
+
+        // --- Mobile Menu Script ---
         const mobileMenuButton = document.getElementById('mobile-menu-button');
         const mobileMenu = document.getElementById('mobile-menu');
-
         mobileMenuButton.addEventListener('click', () => {
             mobileMenu.classList.toggle('hidden');
         });
+        document.querySelectorAll('#mobile-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+            });
+        });
     </script>
-
 </body>
 </html>
